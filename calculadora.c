@@ -1,76 +1,97 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int soma(int num1, int num2)
+int menu()
 {
-    return num1 + num2;
+    int opcao;
+
+    printf("[CALCULADORA MENU]: --------------------------");
+    printf("\n[1] Adição;");
+    printf("\n[2] Subtração;");
+    printf("\n[3] Multiplicação;");
+    printf("\n[4] Divisão;");
+    printf("\n[0] Sair.");
+    printf("\n----------------------------------------------");
+
+    printf("\n> Selecione uma opção..: ");
+    scanf("%d", &opcao);
+
+    if (opcao < 0 || opcao > 4)
+        return -1;
+
+    return opcao;
 }
 
-int subtracao(int num1, int num2)
-{
-    return num1 - num2;
-}
-int multiplicacao(int num1, int num2)
-{
-    return num1 * num2;
-}
-
-int divisao(int num1, int num2)
-{
-    return num1 / num2;
-}
 void main()
 {
-    int opc;
-    int num1, num2;
+    int opcao, calculadora_ativa = 1;
+    float x, y;
 
-    do {
-        printf("Soma - 1\n");
-        printf("Subtracao - 2\n");
-        printf("multiplicacao - 3\n");
-        printf("divisao - 4\n");
-        printf("Sair - 5\n");
-        printf("opc:");
-        scanf("%d",&opc);
-
-        switch(opc)
+    while (calculadora_ativa)
+    {
+        do
         {
-        case 1:
-        printf("primeiro numero:");
-        scanf("%d",&num1);
-        printf("\nsegundo numero:");
-        scanf("%d",&num2);
-        printf("\nresultado: %d\n", soma(num1, num2));
+            opcao = menu();
 
-        break;
+            if (opcao == -1)
+                printf("\n");
 
-        case 2:
-        printf("primeiro numero:");
-        scanf("%d",&num1);
-        printf("\nsegundo numero:");
-        scanf("%d",&num2);
-        printf("\nresultado: %d\n", subtracao(num1, num2));
+        } while(opcao == -1);
 
-        break;
+        switch(opcao)
+        {
+            case 1:
+                printf("\n>> Realizando x + y:");
 
-        case 3:
-        printf("primeiro numero:");
-        scanf("%d",&num1);
-        printf("\nsegundo numero:");
-        scanf("%d",&num2);
-        printf("\nresultado: %d\n", multiplicacao(num1, num2));
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
 
-        break;
+                printf("> Insira y..: ");
+                scanf("%f", &y);
 
-        case 4:
-        printf("primeiro numero:");
-        scanf("%d",&num1);
-        printf("\nsegundo numero:");
-        scanf("%d",&num2);
-        printf("\nresultado: %d\n", divisao(num1, num2));
+                printf("\n>> %.2f + %.2f = %.2f\n\n", x, y, x - y);
+                break;
 
-        break;
+            case 2:
+                printf("\n>> Realizando x - y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f - %.2f = %.2f\n\n", x, y, x - y);
+                break;
+
+            case 3:
+                printf("\n>> Realizando x . y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f . %.2f = %.2f\n\n", x, y, x * y);
+                break;
+
+            case 4:
+                printf("\n>> Realizando x / y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f / %.2f = %.2f\n\n", x, y, x / y);
+                break;
+
+            default:
+                calculadora_ativa = 0;
+                break;
         }
+    }
 
-    }while(opc != 5);
-
+    printf("\n>> Encerrando...");
 }
