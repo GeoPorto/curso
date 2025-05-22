@@ -24,6 +24,7 @@ int menu()
 void main()
 {
     int opcao, calculadora_ativa = 1;
+    float x, y;
 
     while (calculadora_ativa)
     {
@@ -36,17 +37,25 @@ void main()
 
         } while(opcao == -1);
 
-        if (opcao == 0)
-        {
-            printf("\n>> Programa encerrado.");
-            calculadora_ativa = 0;
-        }
-
         switch(opcao)
         {
             case 1:
+                printf("\n>> Realizando x + y:");
 
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f + %.2f = %.2f\n\n", x, y, x+y);
+                break;
+
+            default:
+                calculadora_ativa = 0;
                 break;
         }
     }
+
+    printf("\n>> Encerrando...");
 }
