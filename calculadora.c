@@ -48,7 +48,43 @@ void main()
                 printf("> Insira y..: ");
                 scanf("%f", &y);
 
-                printf("\n>> %.2f + %.2f = %.2f\n\n", x, y, x+y);
+                printf("\n>> %.2f + %.2f = %.2f\n\n", x, y, x - y);
+                break;
+
+            case 2:
+                printf("\n>> Realizando x - y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f - %.2f = %.2f\n\n", x, y, x - y);
+                break;
+
+            case 3:
+                printf("\n>> Realizando x . y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f . %.2f = %.2f\n\n", x, y, x * y);
+                break;
+
+            case 4:
+                printf("\n>> Realizando x / y:");
+
+                printf("\n> Insira x..: ");
+                scanf("%f", &x);
+
+                printf("> Insira y..: ");
+                scanf("%f", &y);
+
+                printf("\n>> %.2f / %.2f = %.2f\n\n", x, y, x / y);
                 break;
 
             default:
